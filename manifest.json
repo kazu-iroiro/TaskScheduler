@@ -1,0 +1,15 @@
+{
+    "name": "タスクス",
+    "short_name": "タスクス",
+    "icons":[
+        {
+            "src": "apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#FFFFFF"
+}

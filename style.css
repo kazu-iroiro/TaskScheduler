@@ -1,0 +1,425 @@
+@font-face {
+    font-family: 'BIZ UDGothic';
+    font-weight: 700;
+    src: url(BIZ_UDGothic/BIZUDGothic-Bold.ttf) format('truetype');
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    height: 5svh;
+    background-color: rgb(255, 255, 255);
+    padding: 1svh 0;
+    border-top: solid 0svw #00000000;
+    border-bottom: solid 1svw #000000;
+}
+
+.header_text {
+    font-size: 3.75svh;
+    margin-left: 2svh;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu_text {
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 3.5svh;
+    right: 2svw;
+    margin-left: 5svw;
+    font-size: 5svw;
+}
+
+/*hamburger menu*/
+.drawer_hidden {
+    display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer_open {
+    display: flex;
+    height: 15svw;
+    width: 15svw;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    top: -1svh;
+    /* 重なり順を一番上にする */
+    cursor: pointer;
+}
+
+/* ハンバーガーメニューのアイコン */
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+    content: '';
+    display: block;
+    height: 0.75svw;
+    width: 6.25svw;
+    border-radius: 0.75svw;
+    background: #000000;
+    transition: 0.5s;
+    position: absolute;
+}
+
+/* 三本線の一番上の棒の位置調整 */
+.drawer_open span:before {
+    bottom: 1svh;
+}
+
+/* 三本線の一番下の棒の位置調整 */
+.drawer_open span:after {
+    top: 1svh;
+}
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+#drawer_input:checked~.drawer_open span {
+    background: rgba(255, 255, 255, 0);
+}
+
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+#drawer_input:checked~.drawer_open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+#drawer_input:checked~.drawer_open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* メニューのデザイン*/
+.nav_content {
+    width: 100%;
+    height: 100%;
+    top: 7.5svh;
+    left: 100%;
+    /* メニューを画面の外に飛ばす */
+    background: #fff;
+    transition: .5s;
+    position: fixed;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.90);
+    border-left: solid 0.5svw #000000;
+    border-top: solid 0svw #000000;
+}
+
+/* メニュー黒ポチを消す */
+.nav_list {
+    margin-top: 2svh;
+    margin-left: 0svw;
+    list-style: none;
+    font-size: 7svw;
+}
+
+.nav_icon {
+    width: 7svw;
+    height: 7svw;
+    margin-right: 1svw;
+}
+
+/* アイコンがクリックされたらメニューを表示 */
+#drawer_input:checked~.nav_content {
+    left: 22.5svw;
+    /* メニューを画面に入れる */
+}
+
+.nav {
+    /*margin-left: 85svw;*/
+    z-index: 101;
+}
+
+.text_box {
+    position: absolute;
+    top: 9.5svh;
+    left: 2svw;
+    width: 60svw;
+    height: 7.5svh;
+    background-color: rgb(255, 255, 255);
+    font-size: 5svw;
+    border: solid 0.5svw #000000;
+    border-radius: 2svw;
+}
+
+.submit_button {
+    position: absolute;
+    top: 10svh;
+    right: 22svw;
+    width: 7svh;
+    height: 7svh;
+    background-color: rgb(255, 255, 255);
+    border: solid 0svw #000000;
+    border-radius: 2svw;
+}
+
+@media (min-height:1660px) {
+    .text_box {
+        width: 52.5svw;
+    }
+
+    .submit_button {
+        right: 24svw;
+    }
+
+    .speak-btn {
+        border-radius: 7.5svw;
+        border: solid 0 #000000;
+    }
+}
+
+@media (min-width: 980px) {
+    .text_box {
+        top: 8.5svh;
+    }
+
+    .submit_button {
+        right: 19.5svw;
+        top: 10.5svh;
+    }
+}
+
+@media (max-width: 555px) {
+    .speak-btn {
+        width: 15svw;
+        height: 15svw;
+        border-radius: 7.5svw;
+        border: solid 0svw #000000;
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        top: 9.5svh;
+        right: 3svw;
+    }
+
+    .speak-btn-icon {
+        width: 10svw;
+        height: 10svw;
+
+        position: absolute;
+        top: 1svh;
+        right: 2.1svw;
+        z-index: 99;
+    }
+}
+
+@media (min-width: 556px) {
+    .speak-btn {
+        width: 9.25svh;
+        height: 9.25svh;
+        border-radius: 9.25svh;
+        border: solid 0svw #000000;
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        top: 9svh;
+        right: 3svw;
+    }
+
+    .speak-btn-icon {
+        width: 7.5svh;
+        height: 7.5svh;
+
+        position: absolute;
+        top: 1svh;
+        right: 1svw;
+        z-index: 99;
+    }
+}
+
+.line {
+    position: absolute;
+    border: solid 0.125svh rgba(188, 188, 188, 0.8);
+    border-radius: 0.125svh;
+    top: 18.6svh;
+    left: 1.25svw;
+    width: 97.5svw;
+    height: -1svh;
+}
+
+.display_data {
+    width: 90svw;
+    height: 75svh;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 17svh;
+    font-size: 4svw;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding: 3svw;
+    margin: 2svw;
+    margin-top: 2svh;
+    border-style: inherit;
+}
+
+.data_deco {
+    border: solid 0.5svw #000000;
+    border-radius: 1svw 4svw 4svw 4svw;
+    margin-bottom: 6svw;
+    text-align: center;
+    padding-bottom: 5svw;
+    font-size: 5svw;
+    font-weight: bold;
+    font-family: 'BIZ UDGothic', sans-serif;
+    margin-top: -3svw;
+}
+
+.date_deco {
+    border-right: solid 0.5svw #000000;
+    border-bottom: solid 0.5svw #000000;
+    border-bottom-right-radius: 1svw;
+    margin-bottom: 2svw;
+    min-width: 30svw;
+    width: fit-content;
+    max-width: 40svw;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 5svw;
+    font-weight: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.close-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 10svw;
+    opacity: .05;
+}
+
+.close-icon:hover {
+    opacity: .7;
+}
+
+.data_deco_after {
+    animation: fade-out 0.3s forwards;
+}
+
+.data_deco_box_resize {
+    animation: fade-out-resize 0.1s forwards;
+}
+
+.data_deco_box_after {
+    animation: fade-out-box 0.3s forwards;
+    animation: fade-out-delete 0.4s forwards;
+}
+
+@keyframes fade-out {
+    100% {
+        opacity: 0;
+        display: none;
+    }
+
+    0% {
+        opacity: 100%;
+    }
+}
+
+@keyframes fade-out-box {
+    100% {
+        opacity: 0;
+        /*display: none;*/
+        /*height: 0svh;*/
+    }
+
+    0% {
+        opacity: 100%;
+        height: auto;
+    }
+}
+
+@keyframes fade-out-delete {
+    100% {
+        opacity: 0;
+        display: none;
+        height: -1svh;
+    }
+
+    0% {
+        /*opacity: 100%;*/
+    }
+}
+
+@keyframes fade-out-resize {
+    100% {
+        height: fit-content;
+    }
+
+    0% {}
+}
+
+/* スクロールの幅の設定 */
+.display_data::-webkit-scrollbar {
+    width: 2svw;
+    height: 2svw;
+}
+
+/* スクロールの背景の設定 */
+.display_data::-webkit-scrollbar-track {
+    border-radius: 2svw;
+    background: rgba(110, 108, 108, 0.2);
+}
+
+/* ドラックできるスクロール部の設定 */
+.display_data::-webkit-scrollbar-thumb {
+    border-radius: 2svw;
+    background: #000000;
+}
+
+#ra {
+    animation: fade-out-title 0.3s forwards;
+    animation-delay: 1.5s;
+}
+
+#uu {
+    animation: fade-out-title 0.3s forwards;
+    animation-delay: 1.6s;
+}
+
+#yu {
+    animation: fade-out-title 0.3s forwards;
+    animation-delay: 1.7s;
+}
+
+#ji {
+    animation: fade-out-title 0.3s forwards;
+    animation-delay: 1.8s;
+}
+
+#ke {
+    animation: fade-out-title 0.3s forwards;
+    animation-delay: 1.9s;
+}
+
+@keyframes fade-out-title {
+    100% {
+        opacity: 0;
+        display: none;
+    }
+
+    0% {
+        opacity: 100%;
+    }
+}
+
+@media (orientation: landscape) {
+    /* 画面が横向きの場合 */
+}
+
+.help {
+    top: 10svh !important;
+    height: 82svh !important;
+}

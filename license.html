@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>タスクス</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <script async src="./pwacompat.min.js"></script>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
+    <link rel="icon" type="image/png" href="apple-touch-icon.png" sizes="180x180" />
+    <link rel="icon" href="favicon.ico" />
+</head>
+
+<body>
+    <header><span class="header_text"><a href="index.html">タスクス</a><span id="ke">ケ</span><span id="ji">ジ</span><span
+                id="yu">ュ</span><span id="uu">ー</span><span id="ra">ラ</span></span>
+        <span class="menu_text">Menu</span>
+        <!-- ハンバーガーメニュー部分 -->
+        <div class="nav">
+            <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+            <input id="drawer_input" class="drawer_hidden" type="checkbox">
+            <!-- ハンバーガーアイコン -->
+            <label for="drawer_input" class="drawer_open"><span></span></label>
+
+            <!-- メニュー -->
+            <nav class="nav_content">
+                <ul class="nav_list">
+                    <li class="nav_item"><a href="index.html"><img class="nav_icon" src="images/home.png">ホーム</a></li>
+                    <li class="nav_item"><a href="setting.html"><img class="nav_icon" src="images/setting.png">設定</a>
+                    </li>
+                    <li class="nav_item"><a href="howto.html"><img class="nav_icon" src="images/howto.png">使い方</a></li>
+                    <li class="nav_item"><a href="about.html"><img class="nav_icon" src="images/about.png">タスクスについて</a>
+                    </li>
+                    <li class="nav_item"><a href="license.html"><img class="nav_icon" src="images/license.png">利用規約</a>
+                    </li>
+
+                    <br>
+                    <li class="nav_item"><a href="check.html"><img class="nav_icon" src="images/check.png">動作確認</a></li>
+                    <li class="nav_item" id="InstallPwa"><a href="install.html"><img class="nav_icon"
+                                src="images/install.png">インストール</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!--表示-->
+    <div class="display_data help" id="display_data">
+        <div class="data_deco" id="license">
+            <div class="date_deco">利用規約</div>
+            <p class="item" id="license">このWebアプリケーション(以下当アプリ)を使用した時点で、利用者(以下ユーザー)はこの利用規約に同意したものとみなします</p>
+            <br>
+            <p class="item" id="license">当アプリはオープンソースソフトウェア(OSS)ですが、一部外部ライブラリを使用しています</p>
+            <p class="item" id="license">当アプリの改変や再配布は自由に行っていただいて構いませんが、「<a href="about.html">タスクスについて</a>」に記載してある外部ライブラリについては、改変、再配布された方の責任でご使用ください</p>
+            <p class="item" id="license">また、改変されたソフトウェアの使用や、再配布したことによって何らかの損害がを生じた場合でも、当アプリの制作者は一切の責任を負いません</p>
+            <br>
+            <p class="item" id="license">当アプリ自体には、何らかの情報を送信する機能はありません</p>
+            <p class="item" id="license">音声認識機能については、端末やブラウザに搭載されているAPIを利用しているため、そのAPIがサーバーへ音声データを送信する場合があります</p>
+            <br>
+            <p class="item" id="license">当アプリを使用したことによって何らかの不利益を被ったり、損害が生じた場合でも、制作者は一切の責任を負いません</p>
+            <p class="item" id="license">当アプリの使用料は無料ですが、使用によって生じるデータ通信料などはユーザー負担となります</p>
+        </div>
+    </div>
+
+    <!--jsファイルたち-->
+    <script src="./jquery-3.5.1.min.js"></script>
+</body>
+
+</html>

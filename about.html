@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>タスクス</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <script async src="./pwacompat.min.js"></script>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
+    <link rel="icon" type="image/png" href="apple-touch-icon.png" sizes="180x180" />
+    <link rel="icon" href="favicon.ico" />
+</head>
+
+<body>
+    <header><span class="header_text"><a href="index.html">タスクス</a><span id="ke">ケ</span><span id="ji">ジ</span><span
+                id="yu">ュ</span><span id="uu">ー</span><span id="ra">ラ</span></span>
+        <span class="menu_text">Menu</span>
+        <!-- ハンバーガーメニュー部分 -->
+        <div class="nav">
+            <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+            <input id="drawer_input" class="drawer_hidden" type="checkbox">
+            <!-- ハンバーガーアイコン -->
+            <label for="drawer_input" class="drawer_open"><span></span></label>
+
+            <!-- メニュー -->
+            <nav class="nav_content">
+                <ul class="nav_list">
+                    <li class="nav_item"><a href="index.html"><img class="nav_icon" src="images/home.png">ホーム</a></li>
+                    <li class="nav_item"><a href="setting.html"><img class="nav_icon" src="images/setting.png">設定</a>
+                    </li>
+                    <li class="nav_item"><a href="howto.html"><img class="nav_icon" src="images/howto.png">使い方</a></li>
+                    <li class="nav_item"><a href="about.html"><img class="nav_icon" src="images/about.png">タスクスについて</a>
+                    </li>
+                    <li class="nav_item"><a href="license.html"><img class="nav_icon" src="images/license.png">利用規約</a>
+                    </li>
+
+                    <br>
+                    <li class="nav_item"><a href="check.html"><img class="nav_icon" src="images/check.png">動作確認</a></li>
+                    <li class="nav_item" id="InstallPwa"><a href="install.html"><img class="nav_icon"
+                                src="images/install.png">インストール</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!--表示-->
+    <div class="display_data help" id="display_data">
+        <div class="data_deco" id="setting">
+            <div class="date_deco">タスクスについて</div>
+            <p class="item" id="setting">項目名/内容</p>
+            <p class="item" id="setting">リンク</p>
+        </div>
+        <div class="data_deco" id="setting">
+            <div class="date_deco">使用ライブラリ</div>
+            <p class="item" id="setting">kuromoji.js</p>
+            <p class="item" id="setting"><a href="https://github.com/takuyaa/kuromoji.js">GitHub</a></p>
+            <br>
+            <p class="item" id="setting">jQuery 3.5.1</p>
+            <p class="item" id="setting"><a href="https://jquery.com/">公式サイト</a></p>
+
+            <br>
+            <p class="item" id="setting">PWACompat</p>
+            <p class="item" id="setting"><a href="https://github.com/GoogleChromeLabs/pwacompat">GitHub</a></p>
+
+            <br>
+            <p class="item" id="setting">漢数字を算用数字にする<br>スクリプト</p>
+            <p class="item" id="setting"><a href="https://qiita.com/t-yama-3/items/9819600cec53723472d3">Qiita -
+                    @t-yama-3</a></p>
+
+            <br>
+            <p class="item" id="setting">動くWebデザイン<br>アイディア帳<br>ハンバーガーメニュー<br>-3本線が×に-</p>
+            <p class="item" id="setting"><a href="https://coco-factory.jp/ugokuweb/move01/5-2-1/">Webサイト</a></p>
+
+        </div>
+        <div class="data_deco" id="setting">
+            <div class="date_deco">使用画像</div>
+            <p class="item" id="setting">ICOOON MONO</p>
+            <p class="item" id="setting"><a href="https://icooon-mono.com/">公式サイト</a></p>
+        </div>
+        <div class="data_deco" id="setting">
+            <div class="date_deco">使用ブラウザAPI</div>
+            <p class="item" id="setting">Web Speech API</p>
+            <p class="item" id="setting"><a
+                    href="https://developer.mozilla.org/ja/docs/Web/API/Web_Speech_API">ドキュメント</a>
+            </p>
+        </div>
+        <div class="data_deco" id="setting">
+            <div class="date_deco">使用フォント</div>
+            <p class="item" id="setting">BIZ UDGothic</p>
+            <p class="item" id="setting"><a href="https://fonts.google.com/specimen/BIZ+UDGothic">Google
+                    Font</a>
+            </p>
+        </div>
+        <div class="data_deco" id="setting">
+            <div class="date_deco">参考文献</div>
+            <p class="item" id="setting">PWAのインストールについて</p>
+            <p class="item" id="setting"><a href="https://qiita.com/OMOIKANESAN/items/13a3dde525e33eb608ae">Qiita -
+                    @OMOIKANESAN</a></p>
+
+            <br>
+            <p class="item" id="setting">Web Speech APIで<br>音声認識した数字が<br>漢数字になってしまう<br>問題の対処法</p>
+            <p class="item" id="setting"><a href="https://qiita.com/Yoshihiro-Hirose/items/31e823d53b3171ba8cd3">Qiita -
+                    @Yoshihiro-Hirose</a></p>
+
+            <br>
+            <p class="item" id="setting">JavaScriptで<br>Local Storageの内容を<br>全て表示する</p>
+            <p class="item" id="setting"><a href="https://blog.sarabande.jp/post/73643047325">Webサイト</a></p>
+
+            <br>
+            <p class="item" id="setting">【JavaScript】クリックで<br>特定のフォームやテーブル行を<br>消す</p>
+            <p class="item" id="setting"><a href="https://noveblo.com/javascript-delete-form/">Webサイト</a></p>
+
+            <br>
+            <p class="item" id="setting">【CSS】Googleフォントを<br>ローカル設置で使う</p>
+            <p class="item" id="setting"><a href="https://note.com/mamamamemememo/n/nec6eefefa552">note - めめも</a></p>
+        </div>
+
+        <!--jsファイルたち-->
+        <script src="./jquery-3.5.1.min.js"></script>
+</body>
+
+</html>
